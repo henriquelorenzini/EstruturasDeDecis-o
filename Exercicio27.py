@@ -8,52 +8,88 @@ kiloMorango = float(input('Quantos kilos de morango você quer? '))
 kiloMaca = float(input('Quantos kilos de mação você quer? '))
 
 
-
-def morango():
+def morango(valorMorango = 0):
     if kiloMorango <= 5:
         valorMorango = kiloMorango * 2.50
-        descontoMorango = valorMorango * 0.1
+        valorTotal = valorMorango
         print('Kilos de morango: {} '.format(kiloMorango))
-        print('Preço do morango: R$ {:.2f}'.format(valorMorango))
+        print('Preço do morango: R$ {:.2f}'.format(valorTotal))
 
-    elif kiloMorango >= 8 or valorMorango >= 25:
-
+    elif kiloMorango >= 8 or valorMorango > 25.00:
+            valorMorango = kiloMorango * 2.20
+            descontoMorango = valorMorango * 0.1
+            valorTotal = valorMorango - descontoMorango
+            print('Kilos de morango: {} '.format(kiloMorango))
+            print('Preço do morango: R$ {:.2f}'.format(valorTotal))
     else:
         valorMorango = kiloMorango * 2.20
+        valorTotal = valorMorango
         print('Kilos de morango: {} '.format(kiloMorango))
-        print('Preço do morango: R$ {:.2f}'.format(valorMorango))
+        print('Preço do morango: R$ {:.2f}'.format(valorTotal))
 
-def maca():
+
+def maca(valorMaca = 0):
     if kiloMaca <=5:
         valorMaca = kiloMaca * 1.80
+        valorTotal = valorMaca
         print('Kilos de maçã: {} '.format(kiloMaca))
-        print('Preço da maçã: R$ {:.2f}'.format(valorMaca))
+        print('Preço da maçã: R$ {:.2f}'.format(valorTotal))
+
+    elif kiloMorango >= 8 or valorMaca > 25.00:
+        valorMaca = kiloMaca * 1.50
+        descontoMaca = valorMaca * 0.1
+        valorTotal = valorMaca - descontoMaca
+        print('Kilos de de maçã: {} '.format(kiloMaca))
+        print('Preço da maçã: R$ {:.2f}'.format(valorTotal))
+
     else:
         valorMaca = kiloMaca * 1.50
+        valorTotal = valorMaca
         print('Kilos de maçã: {} '.format(kiloMaca))
-        print('Preço da maçã: R$ {:.2f}'.format(valorMaca))
+        print('Preço da maçã: R$ {:.2f}'.format(valorTotal))
 
-def morangoMaca():
+
+def morangoMaca(kiloTotal = 0,valorTotal = 0):
     if kiloMorango != 0 and kiloMaca !=0 and kiloMorango <= 5 and kiloMaca <= 5:
         valorMorango = kiloMorango * 2.50
         valorMaca = kiloMaca * 1.80
         valorTotal = valorMorango + valorMaca
+        kiloTotal = kiloMorango + kiloMaca
         print('Kilos de morango: {} '.format(kiloMorango))
         print('Preço do morango: R$ {:.2f}'.format(valorMorango))
         print('Kilos de maçã: {} '.format(kiloMaca))
         print('Preço da maçã: R$ {:.2f}'.format(valorMaca))
+        print('O total de kilos de fruta: {}'.format(kiloTotal))
         print('Valor total: R$ {:.2f} '.format(valorTotal))
+
+    elif kiloTotal >= 8 or valorTotal >= 25:
+            valorMorango = kiloMorango * 2.20
+            valorMaca = kiloMaca * 1.50
+            valorTotal = valorMaca + valorMorango
+            desconto = valorTotal * 0.1
+            valorFinal = valorTotal - desconto
+            kiloTotal = kiloMorango + kiloMaca
+            print('Kilos de morango: {} '.format(kiloMorango))
+            print('Preço do morango: R$ {:.2f}'.format(valorMorango))
+            print('Kilos de maçã: {} '.format(kiloMaca))
+            print('Preço da maçã: R$ {:.2f}'.format(valorMaca))
+            print('O total de kilos de fruta: {}'.format(kiloTotal))
+            print('Valor total: R$ {:.2f} '.format(valorFinal))
+
     else:
         valorMorango = kiloMorango * 2.20
         valorMaca = kiloMaca * 1.50
         valorTotal = valorMaca + valorMorango
+        kiloTotal = kiloMorango + kiloMaca
         print('Kilos de morango: {} '.format(kiloMorango))
         print('Preço do morango: R$ {:.2f}'.format(valorMorango))
         print('Kilos de maçã: {} '.format(kiloMaca))
         print('Preço da maçã: R$ {:.2f}'.format(valorMaca))
+        print('O total de kilos de fruta: {}'.format(kiloTotal))
         print('Valor total: R$ {:.2f} '.format(valorTotal))
 
-    if
+
+
 
 if kiloMorango != 0 and kiloMaca == 0:
     morango()
